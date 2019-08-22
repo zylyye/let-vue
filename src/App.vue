@@ -1,28 +1,40 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <el-container>
+    <el-header>
+      <Nav/>
+    </el-header>
+    <el-container>
+      <el-aside>
+        <Aside :route-map="routeMap"/>
+      </el-aside>
+      <el-main>
+<!--        <el-card>-->
+          <router-view/>
+<!--        </el-card>-->
+      </el-main>
+    </el-container>
+
+<!--    <el-footer>footer</el-footer>-->
+  </el-container>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+  import Nav from '@/components/Nav.vue'
+  import Aside from '@/components/Aside.vue'
+  import routeMap from "@/router/routeMap"
 
-export default {
-  name: 'app',
-  components: {
-    HelloWorld
+  export default {
+    name: 'app',
+    components: {
+      Nav,
+      Aside
+    },
+      data() {
+        return {
+            routeMap,
+        }
+      }
   }
-}
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped>
 </style>
