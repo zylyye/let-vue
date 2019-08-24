@@ -3,7 +3,6 @@
             class="el-menu-vertical-demo"
             :router="true"
             :collapse="collapse"
-            @select="select"
             unique-opened
     >
         <template v-for="(item,index) in routeMap">
@@ -43,7 +42,7 @@
 
 <script>
     export default {
-        name: "Aside",
+        name: "AsideMenu",
         props: {
             routeMap: {
                 type: Array,
@@ -61,8 +60,11 @@
 </script>
 
 <style lang="scss" scoped>
-    .el-menu-vertical-demo:not(.el-menu--collapse) {
-        width: 200px;
-        min-height: 400px;
+    .el-menu-vertical-demo {
+        min-height: 800px;
+        &:not(.el-menu--collapse) {
+            width: 200px;
+        }
     }
+
 </style>
