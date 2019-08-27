@@ -1,6 +1,6 @@
 export default [
     {
-        path: '/home',
+        path: '/Home',
         name: '首页',
         icon: 'el-icon-house',
         component: () => import('@/pages/Home.vue')
@@ -13,7 +13,14 @@ export default [
             {
                 path: 'simple-table',
                 name: '简单表格',
-                icon: 'el-icon-tableware'
+                icon: 'el-icon-tableware',
+                children: [
+                    {
+                        path: 'demo',
+                        name: 'Demo',
+                        component: () => import('@/pages/Demo.vue')
+                    },
+                ]
             },
             {
                 path: 'page-table',
@@ -38,12 +45,12 @@ export default [
                 icon: 'el-icon-tableware'
             },
             {
-                path: 'page-table1',
+                path: '/page-table1',
                 name: '分页表格1',
                 icon: 'el-icon-tableware'
             },
             {
-                path: 'filter-table1',
+                path: '/filter-table1',
                 name: '检索表格1',
                 icon: 'el-icon-tableware'
             },

@@ -5,7 +5,7 @@
             :collapse="collapse"
             unique-opened
     >
-        <LetMenuItem v-for="(item, index) in routeMap" :key="index" :menu-item="item" parent-path="/" />
+        <LetMenuItem v-for="(item, index) in routeMap" :key="index" :menu-item="item" parent-path="" />
         <el-menu-item @click="collapse = !collapse">
             <template v-if="collapse">
                 <i class="el-icon-arrow-right"></i>

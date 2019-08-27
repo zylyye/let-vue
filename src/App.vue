@@ -1,5 +1,6 @@
 <template>
-    <AppContainer/>
+<!--    <AppContainer/>-->
+    <router-view/>
 </template>
 <script>
     import AppContainer from "@/components/AppContainer"

@@ -13,7 +13,9 @@
             <el-dropdown-menu>
                 <el-dropdown-item>个人中心</el-dropdown-item>
                 <el-dropdown-item>系统设置</el-dropdown-item>
-                <el-dropdown-item>退出登录</el-dropdown-item>
+                <el-dropdown-item>
+                    <router-link to="/login">退出登录</router-link>
+                </el-dropdown-item>
             </el-dropdown-menu>
         </el-dropdown>
     </el-menu>
@@ -25,7 +27,7 @@
         props: {
             src: {
                 type: String,
-                default: 'http://zylyye.cn/assets/images/avatar.png'
+                // default: 'http://zylyye.cn/assets/images/avatar.png'
             },
             username: {
                 type: String,

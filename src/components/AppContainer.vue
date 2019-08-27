@@ -8,6 +8,9 @@
                 <Header/>
             </el-header>
             <el-main>
+                <transition>
+                    <router-view/>
+                </transition>
             </el-main>
         </el-container>
     </el-container>
@@ -16,7 +19,7 @@
 <script>
     import Header from '@/components/Header'
     import AsideMenu from "@/components/AsideMenu"
-    import routeMap from "@/router/routeMap"
+    import routeMap from "@/router/menuConfig"
 
     export default {
         name: "AppContainer",
