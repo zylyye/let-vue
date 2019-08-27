@@ -5,28 +5,7 @@
             :collapse="collapse"
             unique-opened
     >
-        <template v-for="(item,index) in routeMap">
-            <template v-if="item.children && item.children.length > 0">
-                <el-submenu :index="item.path" :key="index">
-                    <template slot="title">
-                        <i v-if="item.icon" :class="item.icon"></i>
-                        <span>{{item.name}}</span>
-                    </template>
-                    <template v-for="(subItem,subIndex) in item.children">
-                        <el-menu-item :index="item.path + '/' + subItem.path" :key="index + '-' +subIndex">
-                            <i v-if="subItem.icon" :class="subItem.icon"></i>
-                            <span>{{subItem.name}}</span>
-                        </el-menu-item>
-                    </template>
-                </el-submenu>
-            </template>
-            <template v-else>
-                <el-menu-item :index="item.path" :key="index">
-                    <i v-if="item.icon" :class="item.icon"></i>
-                    <span>{{item.name}}</span>
-                </el-menu-item>
-            </template>
-        </template>
+        <LetMenuItem v-for="(item, index) in routeMap" :key="index" :menu-item="item" parent-path="/" />
         <el-menu-item @click="collapse = !collapse">
             <template v-if="collapse">
                 <i class="el-icon-arrow-right"></i>
@@ -41,8 +20,13 @@
 </template>
 
 <script>
+    import LetMenuItem from "@/components/LetMenuItem"
+
     export default {
         name: "AsideMenu",
+        components: {
+          LetMenuItem,
+        },
         props: {
             routeMap: {
                 type: Array,
